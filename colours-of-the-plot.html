@@ -1,0 +1,39 @@
+---
+layout: page
+title: Colours of the Plot
+permalink: /colours-of-the-plot/
+kicker: Natural dye shade card
+intro: Every colour here comes from something growing on the allotment or in the garden. The swatches are on-screen approximations of the dyed yarn, so the real thing will vary a little.
+---
+<ol class="shade-card">
+  {% for colour in site.data.colours %}
+  {% if colour.status == "done" %}
+  <li class="shade">
+    <div class="swatch" style="background: {{ colour.hex }}"></div>
+    <div class="shade-body">
+      <p class="shade-number">No. {{ colour.number }}</p>
+      <h3>{{ colour.name }}</h3>
+      <dl>
+        <dt>Plant</dt><dd>{{ colour.plant }}</dd>
+        <dt>Fibre</dt><dd>{{ colour.fibre }}</dd>
+        <dt>Mordant</dt><dd>{{ colour.mordant }}</dd>
+        <dt>Dyed</dt><dd>{{ colour.date | date: '%-d %B %Y' }}</dd>
+      </dl>
+      <p>{{ colour.note }}</p>
+    </div>
+  </li>
+  {% else %}
+  <li class="shade shade-todo">
+    <div class="swatch swatch-empty" aria-hidden="true"></div>
+    <div class="shade-body">
+      <p class="shade-number">Still to try</p>
+      <h3>{{ colour.name }}</h3>
+      <dl>
+        <dt>Plant</dt><dd>{{ colour.plant }}</dd>
+        <dt>Expected</dt><dd>{{ colour.expect }}</dd>
+      </dl>
+    </div>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ol>

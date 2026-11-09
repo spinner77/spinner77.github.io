@@ -1,0 +1,21 @@
+<li class="make-card">
+  <div class="make-photo">
+    {% if include.make.image != "" %}
+    <img src="{{ '/assets/images/makes/' | append: include.make.image | relative_url }}" alt="{{ include.make.alt }}" loading="lazy">
+    {% else %}
+    <div class="photo-placeholder" aria-hidden="true">
+      <svg viewBox="0 0 32 32"><path d="M16 2C9 7 5 13 5 19c0 6 5 10 11 11 6-1 11-5 11-11 0-6-4-12-11-17Z" fill="currentColor"/></svg>
+      <span>Photo to come</span>
+    </div>
+    {% endif %}
+    <span class="status status-{{ include.make.status | replace: ' ', '-' }}">{{ include.make.status }}</span>
+  </div>
+  <div class="make-body">
+    <h3>{{ include.make.name }}</h3>
+    <p class="make-note">{{ include.make.note }}</p>
+    <dl class="make-facts">
+      <dt>From the plot</dt><dd>{{ include.make.from_the_plot }}</dd>
+      <dt>The time it takes</dt><dd>{{ include.make.time }}</dd>
+    </dl>
+  </div>
+</li>

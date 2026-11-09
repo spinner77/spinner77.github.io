@@ -1,0 +1,28 @@
+# Colours of the Plot: natural dye shade card.
+# hex is an on-screen approximation of the dyed yarn. Adjust it to match a photo.
+# Set status to "to try" for dyes not yet done; they show as empty swatches.
+
+- number: 1
+  name: Apple-leaf olive
+  hex: "#8a8a3c"
+  plant: Apple leaves, from the October pruning
+  fibre: Drift's light grey Shetland, hand spun
+  mordant: None
+  date: 2026-10-17
+  status: done
+  note: Olive green with yellow tones. First used in the apple-leaf hat.
+
+- name: Elder berry
+  plant: Elder berries
+  expect: Lilacs and purples (these tend to fade)
+  status: to try
+
+- name: Willow bark
+  plant: Bark from the coppiced willows
+  expect: Pinks, tans and browns
+  status: to try
+
+- name: Elder bark with iron
+  plant: Elder bark
+  expect: Greys and blacks
+  status: to try

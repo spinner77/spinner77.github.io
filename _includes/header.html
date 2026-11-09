@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <svg class="brand-leaf" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C9 7 5 13 5 19c0 6 5 10 11 11 6-1 11-5 11-11 0-6-4-12-11-17Z" fill="currentColor" opacity=".9"/><path d="M16 5v25M16 12l-5-4M16 12l5-4M16 17l-7-5M16 17l7-5M16 22l-7-4M16 22l7-4" stroke="var(--paper)" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+      <span>{{ site.title }}</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="{{ '/tangled-roots/' | relative_url }}"{% if page.url contains '/tangled-roots/' %} aria-current="page"{% endif %}>{{ site.blog_name }}</a></li>
+        <li><a href="{{ '/made-by-hand/' | relative_url }}"{% if page.url == '/made-by-hand/' %} aria-current="page"{% endif %}>Made by Hand</a></li>
+        <li><a href="{{ '/colours-of-the-plot/' | relative_url }}"{% if page.url == '/colours-of-the-plot/' %} aria-current="page"{% endif %}>Colours of the Plot</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

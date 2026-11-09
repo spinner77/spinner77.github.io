@@ -1,0 +1,61 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="kicker">Buxton, Derbyshire</p>
+    <h1>{{ site.tagline }}</h1>
+    <p class="lede">An overgrown allotment with wonderful soil, slowly becoming a place to grow food, medicine, fibre and dye. This is where I share what I grow, what I make from it, the folklore behind the plants, and how long it all really takes.</p>
+    <p class="hero-actions">
+      <a class="button" href="{{ '/tangled-roots/' | relative_url }}">Read {{ site.blog_name }}</a>
+      <a class="button button-quiet" href="{{ '/made-by-hand/' | relative_url }}">See what I've made</a>
+    </p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>Latest from {{ site.blog_name }}</h2>
+    <a href="{{ '/tangled-roots/' | relative_url }}">All posts</a>
+  </div>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %B %Y' }}</time>
+        <span class="post-title">{{ post.title }}</span>
+        {% if post.summary %}<span class="post-summary">{{ post.summary }}</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>The first post is on its way.</p>
+  {% endif %}
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>On the workbench</h2>
+    <a href="{{ '/made-by-hand/' | relative_url }}">Made by Hand</a>
+  </div>
+  <ul class="make-grid make-grid-small">
+    {% for make in site.data.makes limit:3 %}
+    {% include make-card.html make=make %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap section three-ways">
+  <div>
+    <h2>The time it takes</h2>
+    <p>I log the hours that go into each piece, from seed or fleece to finished thing. Not to put a price on it, but to remember how much time, skill and patience is in the things we have learned to throw away.</p>
+  </div>
+  <div>
+    <h2>Colours of the Plot</h2>
+    <p>A growing shade card of natural dyes, each one from something on the allotment.</p>
+    <p><a href="{{ '/colours-of-the-plot/' | relative_url }}">See the shade card</a></p>
+  </div>
+</section>

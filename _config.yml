@@ -1,0 +1,50 @@
+# Site settings for Beechview Crafts
+# Edit the values below, then commit. GitHub Pages rebuilds the site for you.
+
+title: Beechview Crafts
+tagline: Growing, gathering and making by hand
+description: >-
+  Slow making from an allotment in Buxton, Derbyshire. Plants, folklore, fibre,
+  baskets and the time it really takes to make things by hand.
+author: Adele
+locale: en_GB
+timezone: Europe/London
+
+# Blog name (shown on the blog page and in post headers)
+blog_name: Tangled Roots
+
+# --- Address of the site -------------------------------------------------
+# If your repository is called  yourname.github.io  leave baseurl empty: ""
+# If it is called something else, e.g. beechview-crafts, use "/beechview-crafts"
+# If you add your own domain later, set url to it and baseurl back to ""
+url: ""
+baseurl: ""
+
+# --- Contact and social links --------------------------------------------
+# Leave any of these empty ("") to hide it from the footer.
+email: ""            # e.g. your new Beechview Crafts Gmail address
+instagram: ""        # just the handle, without the @
+youtube: ""          # full link to the channel
+
+# --- Build settings (no need to change) ----------------------------------
+markdown: kramdown
+permalink: /tangled-roots/:year/:month/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - preview/
+  - tools/

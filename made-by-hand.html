@@ -1,0 +1,12 @@
+---
+layout: page
+title: Made by Hand
+permalink: /made-by-hand/
+kicker: The workbench
+intro: Baskets, yarn, salves and small things, made from what grows on the plot. Each one shows what came from the allotment and how long it took.
+---
+<ul class="make-grid">
+  {% for make in site.data.makes %}
+  {% include make-card.html make=make %}
+  {% endfor %}
+</ul>
