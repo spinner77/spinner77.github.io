@@ -144,6 +144,11 @@ h3 { font-size: 1.25rem; margin: 0 0 .4rem; }
 .post-nav .next { margin-left: auto; text-align: right; }
 .post-nav span { font-size: .85rem; color: var(--ink-soft); }
 
+/* Comments */
+.comments { max-width: var(--measure); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.comments h2 { margin-top: 0; }
+.comments-note { color: var(--ink-soft); font-size: 1rem; }
+
 /* Made by Hand cards */
 .make-grid {
   list-style: none; margin: 0; padding: 0;

@@ -17,7 +17,7 @@ blog_name: Tangled Roots
 # If your repository is called  yourname.github.io  leave baseurl empty: ""
 # If it is called something else, e.g. beechview-crafts, use "/beechview-crafts"
 # If you add your own domain later, set url to it and baseurl back to ""
-url: ""
+url: "https://spinner77.github.io"
 baseurl: ""
 
 # --- Contact and social links --------------------------------------------
@@ -25,6 +25,11 @@ baseurl: ""
 email: "beechviewcrafts@gmail.com"
 instagram: "beechviewcrafts"        # just the handle, without the @
 youtube: ""          # full link to the channel
+
+# --- Comments (Cusdis) ----------------------------------------------------
+# Paste your App ID from cusdis.com between the quotes to switch comments on.
+# Leave it empty ("") to hide the comments box.
+cusdis_app_id: ""
 
 # --- Build settings (no need to change) ----------------------------------
 markdown: kramdown
