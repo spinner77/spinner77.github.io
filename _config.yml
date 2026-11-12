@@ -23,7 +23,7 @@ baseurl: ""
 # --- Contact and social links --------------------------------------------
 # Leave any of these empty ("") to hide it from the footer.
 email: "beechviewcrafts@gmail.com"
-instagram: ""        # just the handle, without the @
+instagram: "beechviewcrafts"        # just the handle, without the @
 youtube: ""          # full link to the channel
 
 # --- Build settings (no need to change) ----------------------------------
