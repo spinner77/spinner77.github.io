@@ -29,7 +29,7 @@ youtube: ""          # full link to the channel
 # --- Tangled Roots on Substack --------------------------------------------
 # Paste your Substack address between the quotes, e.g. "https://tangledroots.substack.com"
 # The blog list then shows your Substack posts (checked once a day), with comments on Substack.
-substack_url: ""
+substack_url: "https://beechviewcrafts.substack.com"
 
 # --- Build settings (no need to change) ----------------------------------
 markdown: kramdown
