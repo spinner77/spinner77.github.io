@@ -45,20 +45,52 @@ def parse(xml_bytes):
     return posts
 
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+    "Accept": "application/rss+xml, application/xml, application/json, text/html;q=0.9, */*;q=0.8",
+    "Accept-Language": "en-GB,en;q=0.9",
+}
+
+
+def get(url):
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read()
+
+
+def from_archive(url):
+    """Backup: Substack's public archive list, used by its own website."""
+    data = json.loads(get(url + "/api/v1/archive?sort=new&limit=50"))
+    posts = []
+    for p in data:
+        if p.get("audience") not in (None, "everyone", "only_free"):
+            continue
+        posts.append({
+            "title": clean(p.get("title")),
+            "url": p.get("canonical_url") or f"{url}/p/{p.get('slug')}",
+            "date": p.get("post_date") or "",
+            "summary": clean(p.get("subtitle") or p.get("description")),
+        })
+    return posts
+
+
 def main():
     url = substack_url()
     if not url:
         print("substack_url is empty; keeping", OUT.name)
         return
-    try:
-        req = urllib.request.Request(url + "/feed", headers={"User-Agent": "BeechviewCraftsSite/1.0"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            posts = parse(r.read())
-    except Exception as e:  # keep the old list rather than break the site
-        print("Could not read the feed:", e)
+    posts = None
+    for name, fetch in (("feed", lambda: parse(get(url + "/feed"))), ("archive", lambda: from_archive(url))):
+        try:
+            posts = fetch()
+            print(f"Read {len(posts)} posts from the {name}")
+            break
+        except Exception as e:
+            print(f"Could not read the {name}:", e)
+    if posts is None:
+        print("Keeping the existing list")
         return
     OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Saved {len(posts)} posts")
 
 
 if __name__ == "__main__":
