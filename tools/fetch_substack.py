@@ -74,13 +74,31 @@ def from_archive(url):
     return posts
 
 
+def from_rss2json(url):
+    """Backup: a free feed-reading service, for when Substack blocks GitHub's servers."""
+    from urllib.parse import quote
+    data = json.loads(get("https://api.rss2json.com/v1/api.json?rss_url=" + quote(url + "/feed", safe="")))
+    if data.get("status") != "ok":
+        raise ValueError(data.get("message", "rss2json error"))
+    posts = []
+    for it in data.get("items", []):
+        d = it.get("pubDate", "")
+        posts.append({
+            "title": clean(it.get("title")),
+            "url": it.get("link"),
+            "date": d.replace(" ", "T") + "+00:00" if d else "",
+            "summary": clean(it.get("description"))[:200],
+        })
+    return posts
+
+
 def main():
     url = substack_url()
     if not url:
         print("substack_url is empty; keeping", OUT.name)
         return
     posts = None
-    for name, fetch in (("feed", lambda: parse(get(url + "/feed"))), ("archive", lambda: from_archive(url))):
+    for name, fetch in (("feed", lambda: parse(get(url + "/feed"))), ("archive", lambda: from_archive(url)), ("rss2json", lambda: from_rss2json(url))):
         try:
             posts = fetch()
             print(f"Read {len(posts)} posts from the {name}")
