@@ -36,7 +36,7 @@ While I waited, I read up on old English folklore. In the old calendar, Michaelm
 
 ## Picking day
 
-On Wednesday 14 October, the pressure rose, the wind dropped and the sun came out. It was dry and settled. Finally, it was time. The day was perfect and I thought I was pushing my luck waiting any longer. Just one frosty night could ruin the whole crop. It turned out I could have waited at least another week. It turned out I could have waited almost a month. The first frost didn’t arrive until 12 November. You win this round of Apple Chicken, apple tree.  Until next year when we battle wit and nerve again!
+On Wednesday 14 October, the pressure rose, the wind dropped and the sun came out. It was dry and settled. Finally, it was time. The day was perfect and I thought I was pushing my luck waiting any longer. Just one frosty night could ruin the whole crop.  It turned out I could have waited almost a month. The first frost didn’t arrive until 12 November. You win this round of Apple Chicken, apple tree.  Until next year when we battle wit and nerve again!
 
 I picked the lot. I weighed them in my trug on the kitchen scales and proudly looked at **3.17 kg** of apples (about 7 lb). They are yellow with a red flush with streaks and freckles, firm and sharp. A few big ones are for eating this week. The rest, including the marked and misshapen ones, are going into chutney and apple cider vinegar, a second try now I know what ripe actually means.
 
