@@ -15,7 +15,6 @@ layout: default
   <div class="prose">
     {{ content }}
   </div>
-  {% include comments.html %}
   {% if page.previous or page.next %}
   <nav class="post-nav" aria-label="More posts">
     {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><span>Older</span>{{ page.previous.title }}</a>{% endif %}

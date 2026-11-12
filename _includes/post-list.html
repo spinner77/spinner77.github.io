@@ -1,0 +1,30 @@
+{%- comment -%}
+  Lists Tangled Roots posts. Uses the Substack feed when substack_url is set
+  in _config.yml (updated daily by .github/workflows/pages.yml), otherwise
+  the posts in _posts. Pass limit=3 to show only the newest few.
+{%- endcomment -%}
+{%- assign limit = include.limit | default: 1000 -%}
+{%- if site.substack_url != "" -%}
+  {%- assign items = site.data.substack -%}
+{%- else -%}
+  {%- assign items = site.posts -%}
+{%- endif -%}
+{%- if items.size > 0 -%}
+<ul class="post-list">
+  {%- for post in items limit: limit %}
+  {%- if site.substack_url != "" -%}{%- assign href = post.url -%}{%- else -%}{%- assign href = post.url | relative_url -%}{%- endif %}
+  <li>
+    <a href="{{ href }}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %B %Y' }}</time>
+      <span class="post-title">{{ post.title }}</span>
+      {% if post.summary and post.summary != "" %}<span class="post-summary">{{ post.summary }}</span>{% endif %}
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{%- else -%}
+<p>The first post is on its way.</p>
+{%- endif -%}
+{%- if site.substack_url != "" %}
+<p class="substack-link"><a class="button button-quiet" href="{{ site.substack_url }}">Read and subscribe on Substack</a></p>
+{%- endif %}

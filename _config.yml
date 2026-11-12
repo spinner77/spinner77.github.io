@@ -26,10 +26,10 @@ email: "beechviewcrafts@gmail.com"
 instagram: "beechviewcrafts"        # just the handle, without the @
 youtube: ""          # full link to the channel
 
-# --- Comments (Cusdis) ----------------------------------------------------
-# Paste your App ID from cusdis.com between the quotes to switch comments on.
-# Leave it empty ("") to hide the comments box.
-cusdis_app_id: ""
+# --- Tangled Roots on Substack --------------------------------------------
+# Paste your Substack address between the quotes, e.g. "https://tangledroots.substack.com"
+# The blog list then shows your Substack posts (checked once a day), with comments on Substack.
+substack_url: ""
 
 # --- Build settings (no need to change) ----------------------------------
 markdown: kramdown
